@@ -11,11 +11,12 @@ def index(name=None):
 def password_generator(name=None):
     if request.method == 'POST':
         number_of_characters = int(request.form['number_of_characters'])
+        is_memorable = 'is_memorable' in request.form
         add_numbers = 'add_numbers' in request.form
         add_symbols = 'add_symbols' in request.form
 
-        password = pg.generate_password(number_of_characters, add_numbers, add_symbols)
-        return render_template('page_password_generator.html', generated_password=password, number_of_characters=number_of_characters, add_numbers=add_numbers, add_symbols=add_symbols)
+        password = pg.generate_password(number_of_characters=number_of_characters, is_memorable=is_memorable, add_numbers=add_numbers, add_symbols=add_symbols)
+        return render_template('page_password_generator.html', generated_password=password, number_of_characters=number_of_characters, is_memorable=is_memorable, add_numbers=add_numbers, add_symbols=add_symbols)
     return render_template('page_password_generator.html')
 
 @app.route('/apps/birthday_reminder')
