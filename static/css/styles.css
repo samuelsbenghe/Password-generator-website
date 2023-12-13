@@ -6,39 +6,35 @@ body {
     color: blue;
 }
 
-.password_generator_heading {
-    color: rgb(190, 15, 182);
-}
-
-.homepage_container {  display: grid;
+.content_container {  display: grid;
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-      "dog_area_1 main_area dog_area_2";
+      "side_area_1 main_area side_area_2";
   }
   
-  .dog_area_1 { grid-area: dog_area_1; background-color: rgb(114, 36, 95); }
+  .side_area_1 { grid-area: side_area_1;}
   
-  .dog_area_2 { grid-area: dog_area_2; background-color: rgb(114, 36, 95);}
+  .side_area_2 { grid-area: side_area_2;}
   
   .main_area { grid-area: main_area; }
   
   
-  html, body , .homepage_container {
+  html, body , .content_container {
     height: 100%;
     margin: 0;
   }
   
   /* For presentation only, no need to copy the code below */
   /*
-  .homepage_container * {
+  .content_container * {
     border: 1px solid red;
     position: relative;
   }
   
-  .homepage_container *:after {
+  .content_container *:after {
     content:attr(class);
     position: absolute;
     top: 0;
