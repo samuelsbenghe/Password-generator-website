@@ -16,7 +16,7 @@ def password_generator(name=None):
         add_symbols = 'add_symbols' in request.form
 
         password = pg.generate_password(number_of_characters=number_of_characters, is_memorable=is_memorable, add_numbers=add_numbers, add_symbols=add_symbols)
-        return render_template('page_password_generator.html', generated_password=password, number_of_characters=number_of_characters, is_memorable=is_memorable, add_numbers=add_numbers, add_symbols=add_symbols)
+        return password
     return render_template('page_password_generator.html')
 
 @app.route('/apps/birthday_reminder')
